@@ -1,0 +1,53 @@
+                /*---- Information ---*/
+
+=> Scroll Magic is the perfect library for you, if you want to ...
+
+    -->animate based on scroll position – either trigger an animation or synchronize it to the scrollbar 
+       movement (like a playback scrub control).
+    -->pin an element starting at a specific scroll position – either indefinitely or for a limited amount 
+       of scroll progress (sticky elements).
+    -->toggle CSS classes of elements on and off based on scroll position.
+    -->effortlessly add parallax effects to your website.
+    -->create an infinitely scrolling page (ajax load of additional content).
+    -->add callbacks at specific scroll positions or while scrolling past a specific section, passing a 
+       progress parameter.
+
+=> To implement animations, ScrollMagic can work with multiple frameworks:-
+
+    -->The recommended solution is the /*Greensock Animation Platform (GSAP)*/ due to its stability and 
+       feature richness. For a more lightweight approach the /*VelocityJS*/ framework is also supported.       
+
+                /*---- step by step guide ---*/
+
+1). Add ScrollMagic.min.js into your html file.
+        Note: -> The logging feature is removed in the minified version due to file size considerations.
+              -> To use plugins like the indicators visualization, simply include them additionally to the 
+                 main library:
+
+                 ex.- <script src="js/scrollmagic/uncompressed/plugins/debug.addIndicators.js"></script>
+
+2). Initialization:- (For more..../* http://scrollmagic.io/docs/index.html */)
+        Note: ->The basic ScrollMagic design pattern is one controller, which has one or more scenes  
+                attached to it.
+              ->Each scene is used to define what happens when the container is scrolled to a specific 
+                offset.
+
+		$(document).ready(function() {
+			// init controller
+            var controller = new ScrollMagic.Controller();
+
+            // create a scene
+            new ScrollMagic.Scene({
+                    duration: 100,    // the scene should last for a scroll distance of 100px
+                    offset: 50    // start this scene after scrolling for 50px
+                })
+                .setPin("#my-sticky-element") // pins the element for the the scene's duration
+                .addTo(controller); // assign the scene to the controller
+		});
+
+							/*------- Extra-feature-content -------*/
+
+4). For option, events and plugins:-
+
+     ( http://scrollmagic.io/docs/ScrollMagic.Scene.html#constructor )
+

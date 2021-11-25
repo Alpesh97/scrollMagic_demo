@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="308" height="151" viewBox="0 0 308 151">
+	<defs>
+		<clipPath id="93h3a">
+			<path fill="#fff" d="M1 86.649s196.818 180.894 297.046-68.65"/>
+		</clipPath>
+	</defs>
+	<g>
+		<g>
+			<g>
+				<path fill="none" stroke="#cdd1de" stroke-dasharray="8 4" stroke-miterlimit="20" stroke-width="4" d="M1 86.649s196.818 180.894 297.046-68.65" clip-path="url(&quot;#93h3a&quot;)"/>
+				<path mask="url(#dashed-line5)" fill="none" stroke="#000" stroke-dasharray="8 4" stroke-miterlimit="20" stroke-width="4" d="M1 86.649s196.818 180.894 297.046-68.65" clip-path="url(&quot;#93h3a&quot;)"/>
+				<mask id="dashed-line5">
+					<path class="fill-line" fill="none" stroke="#000" stroke-dasharray="0 380" stroke-miterlimit="20" stroke-width="4" d="M1 86.649s196.818 180.894 297.046-68.65" clip-path="url(&quot;#93h3a&quot;)"/>
+				</mask>
+			</g>
+			<g>
+				<path fill="#cdd1de" d="M301.284.005l-15.72 16.866 22.433 5.164z"/>
+				<path class="fill-arrow" fill="#000" opacity="0" d="M301.284.005l-15.72 16.866 22.433 5.164z"/>
+			</g>
+		</g>
+	</g>
+</svg>

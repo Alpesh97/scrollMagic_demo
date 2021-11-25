@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Line</title>
+    <style>
+		.easy-to-use-slider-item .bar{
+		  background-color: #ccc;
+		  height: 15px;
+		  width: 400px;
+		  position: relative;
+		  padding: 0;
+		  border-radius: 7px;
+		  overflow: hidden;
+		  margin: 30px 0;
+		}
+
+		.bar>span {
+		  width: 100%;
+		  height: 100%;
+		  background-color: #88CE02;
+		  position: absolute;
+		}
+		section{
+			padding: 150px 0;
+			margin: 150px 0;
+			height: 50vh;
+			background-color: #282828;
+		}
+		.easy-to-use-section{
+			height: 150vh;
+		}
+		.easy-to-use-slider-wrapper{
+			position: relative;
+			height: 100%;
+		}
+		.img-inner-div.fade-in,
+		.update-slider-item .img-inner-div.fade-in{
+			opacity: 1;
+		}
+		.img-inner-div{
+			position: absolute;
+			right: -60px;
+			top: -100px;
+			opacity: 0;
+			-webkit-transition: all 1.2s;
+			-o-transition: all 1.2s;
+			transition: all 1.2s;
+		}
+    </style>
+</head>
+<body>
+	<section></section>
+    <div id="trigger" class="spacer"></div>
+    <section class="easy-to-use-section">
+    	<div class="title-wrapper">
+    		<h2>Easy to use software and services.</h2>
+    		<p>For the first time ever, an easy and affordable robotic automation is here.</p>
+    	</div>
+    	<div class="easy-to-use-slider-wrapper">
+			<div class="easy-to-use-slider-item update-slider-item">
+				<div class="img-inner-div fade-in"><img src="images/banner_android.png" alt=""></div>
+				<div class="content-wrapper">
+					<h3>Update</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+					<div class="bar"><span></span></div>
+				</div>
+			</div>
+			<div class="easy-to-use-slider-item change-slider-item">
+				<div class="img-inner-div"><img src="images/banner_angular.png" alt=""></div>
+				<div class="content-wrapper">
+					<h3>Change</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+					<div class="bar"><span></span></div>
+				</div>
+			</div>
+			<div class="easy-to-use-slider-item fix-slider-item">
+				<div class="img-inner-div"><img src="images/banner_apple.png" alt=""></div>
+				<div class="content-wrapper">
+					<h3>Fix</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+					<div class="bar"><span></span></div>
+				</div>
+			</div>
+			<div class="easy-to-use-slider-item automate-slider-slider-item">
+				<div class="img-inner-div"><img src="images/banner_android.png" alt=""></div>
+				<div class="content-wrapper">
+					<h3>Automate</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+					<div class="bar"><span></span></div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/gsap.min.js"></script>
+    <script src="js/ScrollMagic.min.js"></script>
+    <script src="js/debug.addIndicators.min.js"></script>
+    <script src="js/animation.gsap.js"></script>
+    <script>
+	    var winht = jQuery(window).height();
+	    // navht = jQuery(".page-nav-block").innerHeight(),
+	    // triggerH = (navht/winht);
+	    // jQuery(".spacer").css("top", navht);
+
+	    var controller = new ScrollMagic.Controller({
+	        container: window
+	    });
+	    if (jQuery(window).width() > 767) {
+	        var scene = new ScrollMagic.Scene({
+	            triggerElement: (jQuery(window).width()> 767) ? "#trigger":"",
+	            offset: 0,
+	            triggerHook: 0,
+	            duration: winht * 4,
+	            reverse: false,
+	        }).setPin(".easy-to-use-section").setClassToggle("#trigger", "enter").addTo(controller);
+
+	        var tween1 = gsap.timeline().add([
+	            	gsap.from('.update-slider-item .bar>span', {duration:1,scaleX: 0, transformOrigin: "left center", ease: "none"})
+	            ])
+	        new ScrollMagic.Scene({
+	            triggerElement:"#trigger",
+	            triggerHook: 0,
+	            offset: 0,
+	            duration: winht,
+	            reverse: true
+	        }).setTween(tween1)
+	        .on("end", function (event) {
+			    $('.update-slider-item .img-inner-div').addClass('fade-in');
+	        	$('.change-slider-item .img-inner-div').removeClass('fade-in');
+	        	$('.fix-slider-item .img-inner-div').removeClass('fade-in');
+	        	$('.automate-slider-slider-item .img-inner-div').removeClass('fade-in');
+			})
+			.on("start", function (e) {
+				console.log(e.scrollDirection)
+				if (e.scrollDirection==="FORWARD") {
+			    	$('.update-slider-item .img-inner-div').addClass('active');
+				}
+				if (e.scrollDirection==="REVERSE") {
+					$('.update-slider-item .img-inner-div').removeClass('active');
+				}	
+			})
+	        .addTo(controller).addIndicators();
+
+	        var tween2 = gsap.timeline().add([
+		            gsap.from('.change-slider-item .bar>span', {duration:1,scaleX: 0, transformOrigin: "left center", ease: "none",})  
+	            ])
+	        new ScrollMagic.Scene({
+	            triggerElement:"#trigger",
+	            triggerHook: 0.0,
+	            offset: winht,
+	            duration: winht,
+	            reverse: false,
+	            ease: "none"
+	        }).setTween(tween2)
+	        .on("start", function (e) {
+	        	$('.update-slider-item .img-inner-div').removeClass('fade-in');
+			    $('.change-slider-item .img-inner-div').addClass('fade-in');
+			})
+			.on("end", function (event) {
+			    $('.change-slider-item .img-inner-div').addClass('fade-in');
+	        	$('.fix-slider-item .img-inner-div').removeClass('fade-in');
+	        	$('.automate-slider-slider-item .img-inner-div').removeClass('fade-in');
+			})
+	        .addTo(controller).addIndicators();
+
+	        var tween3 = gsap.timeline().add([
+	            	gsap.from('.fix-slider-item .bar>span', {duration:1,scaleX: 0, transformOrigin: "left center", ease: "none",})
+	            ])
+	        new ScrollMagic.Scene({
+	            triggerElement:"#trigger",
+	            triggerHook: 0.0,
+	            offset: winht * 2,
+	            duration: winht,
+	            reverse: true
+	        }).setTween(tween3)
+	        .on("start", function (event) {
+	        	$('.update-slider-item .img-inner-div').removeClass('fade-in');
+	        	$('.change-slider-item .img-inner-div').removeClass('fade-in');
+			    $('.fix-slider-item .img-inner-div').addClass('fade-in');
+			})
+			.on("end", function (event) {
+			    $('.fix-slider-item .img-inner-div').addClass('fade-in');
+	        	$('.automate-slider-slider-item .img-inner-div').removeClass('fade-in');
+			})
+	        .addTo(controller).addIndicators();
+
+	        var tween4 = gsap.timeline().add([
+	            	gsap.from('.automate-slider-slider-item .bar>span', {duration:1,scaleX: 0, transformOrigin: "left center", ease: "none",onComplete: deletePinSpacing})
+	            ])
+	        new ScrollMagic.Scene({
+	            triggerElement:"#trigger",
+	            triggerHook: 0.0,
+	            offset: winht*3,
+	            duration: winht,
+	            reverse: true
+	        }).setTween(tween4)
+	        .on("start", function (event) {
+	        	$('.update-slider-item .img-inner-div').removeClass('fade-in');
+	        	$('.change-slider-item .img-inner-div').removeClass('fade-in');
+	        	$('.fix-slider-item .img-inner-div').removeClass('fade-in');
+			    $('.automate-slider-slider-item .img-inner-div').addClass('fade-in');
+			})
+	        .addTo(controller).addIndicators();
+
+	        function deletePinSpacing() {
+                controller.destroy(reset);
+				controller = null;
+				scene = null;
+				tween1 = null;
+				tween2 = null;
+				tween3 = null;
+				tween4 = null;
+            }
+	    }
+	    else {
+	        controller = controller.destroy(true);
+	    }
+    </script>
+</body>
+</html>

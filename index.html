@@ -1,0 +1,408 @@
+<!Doctype html>
+<html>
+
+<head>
+    <title>Scroll Magic</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=No">
+    <style>
+    	.first{
+    		background-color: #f1f1f1;
+    		display: flex;
+    		align-items: center;
+    		justify-content: center;
+    		font-size: 35px;
+    		color: #000;
+    	}
+    	section,.first{
+    		height: 50vh;
+    		text-align: center;
+    	}
+    	section{
+    		padding: 230px 0 150px;
+    	}
+    	section img{
+    		visibility: 0;
+    		opacity: 0;
+    		transition: all 0.5s;
+    		transform: translateY(50px);
+    	}
+    	section img.fade{
+    		visibility: 1;
+    		opacity: 1;
+    		transform: translateY(0);
+    	}
+    	.content {
+            max-width: 490px;
+            margin: 0 auto;
+            text-align: center;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+         .content h1 {
+          font-size: 3em;
+          position: relative;
+        }
+         .content h1 span {
+          display: block;
+          position: relative;
+        }
+         
+        span:after {
+          content: ' ';
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          background: #fff;
+          z-index: 1;
+          transform-origin: 50% 0% 0;
+        }
+        .gsap_animation{
+            position: relative;
+        }
+        .container{
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        .block-wrapper{
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: flex;
+            -webkit-flex-wrap: wrap;
+            -moz-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+            -o-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin: 0 -25px;
+        }
+        .block-wrapper .block-down{
+            margin-top: 86px;
+        }
+        .block-wrapper .block-inner.block-up>svg{          
+            top: -55px;
+        }
+        .block-wrapper .block-inner.block-down>svg{
+            bottom: -55px;
+        }
+        .block-wrapper .block-inner>svg{
+            left: 75px;
+            height: 150px;
+            width: 270px;
+            z-index: -1;
+            position: absolute;
+        }
+        .block-wrapper .block-inner{
+            height: 170px;
+            background-color: #ccc;
+            border-radius: 10px;
+            position: relative;
+        }
+        .block-wrapper .block{
+            max-width: 20%;
+            flex: 0 0 20%;
+            padding: 0 25px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <section class="first">
+            scroll down the page
+        </section>
+    	<section class="gsap_animation">
+    		<div class="content">
+                <h1 class="anim1"><span>Welcome to</span><span> GreenSock Animation</span> <span>Tool Demo</span></h1>
+            </div>
+    	</section>
+    	<section class="arrow-box">
+    		<div class="container">
+               <div class="block-wrapper">
+                   <div class="block">
+                       <div class="block-inner block-up">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="308" height="152" viewBox="0 0 308 152"><defs><clipPath id="3cxaa"><path fill="#fff" d="M1 64.998s196.618-181.234 296.744 68.778"/></clipPath></defs>
+                                <g>
+                                    <g>
+                                        <g>
+                                            <path fill="none" stroke="#cdd1de" stroke-dasharray="8 4" stroke-miterlimit="20" stroke-width="4" d="M1 64.998s196.618-181.234 296.744 68.778" clip-path="url(&quot;#3cxaa&quot;)"/>
+                                            <path mask="url(#dashed-line1)" fill="none" stroke="#000" stroke-dasharray="8 4" stroke-miterlimit="20" stroke-width="4" d="M1 64.998s196.618-181.234 296.744 68.778" clip-path="url(&quot;#3cxaa&quot;)"/>
+                                            <mask id="dashed-line1">
+                                                <path class="fill-line" fill="none" stroke="#cdd1de" stroke-miterlimit="20" stroke-width="4" d="M1 64.998s196.618-181.234 296.744 68.778" clip-path="url(&quot;#3cxaa&quot;)"/>
+                                            </mask>                                            
+                                        </g>
+                                        <g>
+                                            <path fill="#cdd1de" d="M300.978 151.804l-15.703-16.897 22.41-5.173z"/>
+                                            <path class="fill-line" fill="#000" opacity="0" d="M300.978 151.804l-15.703-16.897 22.41-5.173z"/>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                       </div>
+                   </div>
+                   <div class="block">
+                       <div class="block-inner block-down">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="308" height="151" viewBox="0 0 308 151">
+                                <defs>
+                                    <clipPath id="93h3a">
+                                        <path fill="#fff" d="M1 86.649s196.818 180.894 297.046-68.65"/>
+                                    </clipPath>
+                                </defs>
+                                <g>
+                                    <g>
+                                        <g>
+                                            <path fill="none" stroke="#cdd1de" stroke-dasharray="8 4" stroke-miterlimit="20" stroke-width="4" d="M1 86.649s196.818 180.894 297.046-68.65" clip-path="url(&quot;#93h3a&quot;)"/>
+                                            <path mask="url(#dashed-line2)" fill="none" stroke="#000" stroke-dasharray="8 4" stroke-miterlimit="20" stroke-width="4" d="M1 86.649s196.818 180.894 297.046-68.65" clip-path="url(&quot;#93h3a&quot;)"/>
+                                            <mask id="dashed-line2" maskUnits="userSpaceOnUse">
+                                                <path class="fill-line" fill="none" stroke="#cdd1de" stroke-miterlimit="20" stroke-width="4" d="M1 86.649s196.818 180.894 297.046-68.65" clip-path="url(&quot;#93h3a&quot;)"/>
+                                            </mask>
+                                        </g>
+                                        <g>
+                                            <path fill="#cdd1de" d="M301.284.005l-15.72 16.866 22.433 5.164z"/>
+                                            <path class="fill-line" fill="#000" opacity="0" d="M301.284.005l-15.72 16.866 22.433 5.164z"/>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                       </div>
+                   </div>
+                   <div class="block">
+                       <div class="block-inner block-up">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="308" height="152" viewBox="0 0 308 152"><defs><clipPath id="3cxaa"><path fill="#fff" d="M1 64.998s196.618-181.234 296.744 68.778"/></clipPath></defs>
+                                <g>
+                                    <g>
+                                        <g>
+                                            <path fill="none" stroke="#cdd1de" stroke-dasharray="8 4" stroke-miterlimit="20" stroke-width="4" d="M1 64.998s196.618-181.234 296.744 68.778" clip-path="url(&quot;#3cxaa&quot;)"/>
+                                            <path mask="url(#dashed-line3)" fill="none" stroke="#000" stroke-dasharray="8 4" stroke-miterlimit="20" stroke-width="4" d="M1 64.998s196.618-181.234 296.744 68.778" clip-path="url(&quot;#3cxaa&quot;)"/>
+                                            <mask id="dashed-line3">
+                                                <path class="fill-line" fill="none" stroke="#cdd1de" stroke-miterlimit="20" stroke-width="4" d="M1 64.998s196.618-181.234 296.744 68.778" clip-path="url(&quot;#3cxaa&quot;)"/>
+                                            </mask>                                            
+                                        </g>
+                                        <g>
+                                            <path fill="#cdd1de" d="M300.978 151.804l-15.703-16.897 22.41-5.173z"/>
+                                            <path class="fill-line" fill="#000" opacity="0" d="M300.978 151.804l-15.703-16.897 22.41-5.173z"/>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                       </div>
+                   </div>
+                   <div class="block">
+                       <div class="block-inner block-down">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="308" height="151" viewBox="0 0 308 151">
+                                <defs>
+                                    <clipPath id="93h3a">
+                                        <path fill="#fff" d="M1 86.649s196.818 180.894 297.046-68.65"/>
+                                    </clipPath>
+                                </defs>
+                                <g>
+                                    <g>
+                                        <g>
+                                            <path fill="none" stroke="#cdd1de" stroke-dasharray="8 4" stroke-miterlimit="20" stroke-width="4" d="M1 86.649s196.818 180.894 297.046-68.65" clip-path="url(&quot;#93h3a&quot;)"/>
+                                            <path mask="url(#dashed-line4)" fill="none" stroke="#000" stroke-dasharray="8 4" stroke-miterlimit="20" stroke-width="4" d="M1 86.649s196.818 180.894 297.046-68.65" clip-path="url(&quot;#93h3a&quot;)"/>
+                                            <mask id="dashed-line4" maskUnits="userSpaceOnUse">
+                                                <path class="fill-line" fill="none" stroke="#cdd1de" stroke-miterlimit="20" stroke-width="4" d="M1 86.649s196.818 180.894 297.046-68.65" clip-path="url(&quot;#93h3a&quot;)"/>
+                                            </mask>
+                                        </g>
+                                        <g>
+                                            <path fill="#cdd1de" d="M301.284.005l-15.72 16.866 22.433 5.164z"/>
+                                            <path class="fill-line" fill="#000" opacity="0" d="M301.284.005l-15.72 16.866 22.433 5.164z"/>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                       </div>
+                   </div>
+                   <div class="block">
+                       <div class="block-inner block-up">
+                       </div>
+                   </div>
+               </div>       
+            </div>
+    	</section>
+    	<section class="aeroplane-section">
+    		<svg xmlns="http://www.w3.org/2000/svg" width="1018" height="278" viewBox="0 0 1018 278">
+                <defs>
+                    <clipPath id="tw0na">
+                        <path fill="#fff" d="M-4 158s478.303-314.743 663-51c102.113 214.79-417.407 138.584-452 299-50.68 235.012 474.957 190.957 593 36.999 118.042-153.957 145.553-369.068 217-398"/>
+                    </clipPath>
+                </defs>
+                <g>
+                    <g clip-path="url(#clip-3523)" opacity=".15">
+                        <path class="aeroplane-path" fill="none" stroke="#000" stroke-dasharray="12 6" stroke-miterlimit="20" stroke-width="6" d="M-4 158v0s478.303-314.743 663-51c102.113 214.79-417.407 138.584-452 299-50.68 235.012 474.957 190.957 593 36.999 118.042-153.957 145.553-369.068 217-398" clip-path="url(&quot;#tw0na&quot;)"/>
+                    </g>
+                </g>
+            </svg>
+            <svg class="aeroplane" version="1.1" height="40px" width="40px" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                <g>
+                    <g>
+                        <path class="aeroplane-d" d="M506.955,1.314c-3.119-1.78-6.955-1.75-10.045,0.078L313.656,109.756c-4.754,2.811-6.329,8.943-3.518,13.697
+                            c2.81,4.753,8.942,6.328,13.697,3.518l131.482-77.749L210.411,303.335L88.603,266.069l158.965-94
+                            c4.754-2.812,6.329-8.944,3.518-13.698c-2.81-4.753-8.943-6.33-13.697-3.518L58.91,260.392c-3.41,2.017-5.309,5.856-4.84,9.791
+                            s3.216,7.221,7.004,8.38l145.469,44.504L270.72,439.88c0.067,0.121,0.136,0.223,0.207,0.314c1.071,1.786,2.676,3.245,4.678,4.087
+                            c1.253,0.527,2.57,0.784,3.878,0.784c2.563,0,5.086-0.986,6.991-2.849l73.794-72.12l138.806,42.466
+                            c0.96,0.293,1.945,0.438,2.925,0.438c2.116,0,4.206-0.672,5.948-1.961C510.496,409.153,512,406.17,512,403V10
+                            C512,6.409,510.074,3.093,506.955,1.314z M271.265,329.23c-1.158,1.673-1.779,3.659-1.779,5.694v61.171l-43.823-79.765
+                            l193.921-201.21L271.265,329.23z M289.486,411.309v-62.867l48.99,14.988L289.486,411.309z M492,389.483l-196.499-60.116
+                            L492,45.704V389.483z"/>
+                    </g>
+                </g>
+                <g>
+                    <g>
+                        <path d="M164.423,347.577c-3.906-3.905-10.236-3.905-14.143,0l-93.352,93.352c-3.905,3.905-3.905,10.237,0,14.143
+                            C58.882,457.024,61.441,458,64,458s5.118-0.976,7.071-2.929l93.352-93.352C168.328,357.815,168.328,351.483,164.423,347.577z"/>
+                    </g>
+                </g>
+                <g>
+                    <g>
+                        <path d="M40.071,471.928c-3.906-3.903-10.236-3.903-14.142,0.001l-23,23c-3.905,3.905-3.905,10.237,0,14.143
+                            C4.882,511.024,7.441,512,10,512s5.118-0.977,7.071-2.929l23-23C43.976,482.166,43.976,475.834,40.071,471.928z"/>
+                    </g>
+                </g>
+                <g>
+                    <g>
+                        <path d="M142.649,494.34c-1.859-1.86-4.439-2.93-7.069-2.93c-2.641,0-5.21,1.07-7.07,2.93c-1.86,1.86-2.93,4.43-2.93,7.07
+                            c0,2.63,1.069,5.21,2.93,7.07c1.86,1.86,4.44,2.93,7.07,2.93s5.21-1.07,7.069-2.93c1.86-1.86,2.931-4.44,2.931-7.07
+                            C145.58,498.77,144.51,496.2,142.649,494.34z"/>
+                    </g>
+                </g>
+                <g>
+                    <g>
+                        <path d="M217.051,419.935c-3.903-3.905-10.233-3.905-14.142,0l-49.446,49.445c-3.905,3.905-3.905,10.237,0,14.142
+                            c1.953,1.953,4.512,2.929,7.071,2.929s5.118-0.977,7.071-2.929l49.446-49.445C220.956,430.172,220.956,423.84,217.051,419.935z"/>
+                    </g>
+                </g>
+                <g>
+                    <g>
+                        <path d="M387.704,416.139c-3.906-3.904-10.236-3.904-14.142,0l-49.58,49.58c-3.905,3.905-3.905,10.237,0,14.143
+                            c1.953,1.952,4.512,2.929,7.071,2.929s5.118-0.977,7.071-2.929l49.58-49.58C391.609,426.377,391.609,420.045,387.704,416.139z"/>
+                    </g>
+                </g>
+                <g>
+                    <g>
+                        <path d="M283.5,136.31c-1.86-1.86-4.44-2.93-7.07-2.93s-5.21,1.07-7.07,2.93c-1.859,1.86-2.93,4.44-2.93,7.08
+                            c0,2.63,1.07,5.2,2.93,7.06c1.86,1.87,4.44,2.93,7.07,2.93s5.21-1.06,7.07-2.93c1.859-1.86,2.93-4.43,2.93-7.06
+                            C286.43,140.75,285.36,138.17,283.5,136.31z"/>
+                    </g>
+                </g>
+            </svg>
+
+    	</section>
+    	<!-- <section>
+    		<img src="images/banner_apple.png" alt="banner_apple">
+    	</section> -->
+    </div>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/gsap.min.js"></script>
+    <script src="js/CSSRulePlugin3.min.js"></script>
+    <script src="js/ScrollMagic.min.js"></script>
+    <script src="js/debug.addIndicators.min.js"></script>
+    <script src="js/animation.gsap.js"></script>
+    <script src="js/DrawSVGPlugin3.min.js"></script>
+    <script src="js/MotionPathPlugin.min.js"></script>
+    <script src="js/MotionPathHelper.min.js"></script>
+    <script src="js/ScrollTrigger.min.js"></script>
+    
+</body>
+
+<script>
+    $(function () {     
+
+        gsap.registerPlugin(CSSRulePlugin); 
+        var rule = CSSRulePlugin.getRule("span:after");
+
+        
+
+        // init controller
+		var controller = new ScrollMagic.Controller({
+                    globalSceneOptions:
+            {
+                // triggerHook: 'onLeave'
+            }
+        });
+
+		// create a scene       
+        var height = $('.gsap_animation').innerHeight();
+        var action = gsap.timeline({repeat: -1, yoyo: true,})
+            .from(".anim1", {opacity: 0,duration: 0.2})
+            .to(rule, {cssRule: {scaleY: 0},duration: 1.5})
+
+        new ScrollMagic.Scene({
+			triggerElement:'.gsap_animation',
+            // duration: height,
+            offset: 150,
+            // reverse:false // to run animation only once
+		})
+        .setTween(action)
+        // .on('start', function (event) {
+        //     action.time(0);
+        // })
+		.addTo(controller)
+		.addIndicators();
+
+        // arrow-box-section
+        var height = $('.arrow-box').innerHeight();
+        var action1 = gsap.timeline({repeat: -1, yoyo: true,})
+            .fromTo(".block-wrapper .block-inner>svg .fill-line", {drawSVG:"0% 0%"}, {drawSVG:"0% 100% " ,duration: 0.8,stagger:0.6,opacity:1, ease:"power2.inOut"})
+        new ScrollMagic.Scene({
+            // duration: height,
+             // duration: "100%",
+            triggerElement:'.arrow-box',
+            offset: 200,
+            // reverse:true
+        })
+        .setTween(action1)
+        // .on('start', function (event) {
+        //     action1.play(0);
+        // })
+        // .on('leave', function (event) {
+        //     action1.pause(0);
+        // })
+        .addTo(controller)
+        .addIndicators();
+
+        //aeroplane-animation
+        gsap.registerPlugin(MotionPathPlugin);
+        var height = $('.aeroplane-section').innerHeight();
+        var aeroplane = gsap.to('.aeroplane', {
+            duration: 5, 
+            // repeat:-1,
+            // yoyo: false,
+            ease: "none",
+            motionPath:{
+              start:0,
+              path: '.aeroplane-path',
+              align: '.aeroplane-path',
+              autoRotate: true,
+              alignOrigin: [0.2, 0.2]
+            }
+        })
+        // MotionPathHelper.create('.aeroplane-d');
+         new ScrollMagic.Scene({
+            triggerElement:'.aeroplane-section',
+            offset: 200,
+            // duration:height,
+             // duration: "100%",
+            // reverse:true
+        })
+        .setTween(aeroplane)
+        .addTo(controller)
+        // .on('start', function (event) {
+        //     aeroplane.play(0);
+        // })
+        // .on('leave', function (event) {
+        //    aeroplane.pause(0);
+        // })
+        .addIndicators();
+    });
+</script>
+
+</html>

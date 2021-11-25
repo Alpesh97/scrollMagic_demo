@@ -1,0 +1,321 @@
+<!Doctype html>
+<html>
+
+<head>
+    <title>Scroll Magic</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=No">
+    <style>
+    	.first{
+    		background-color: #f1f1f1;
+    		display: flex;
+    		align-items: center;
+    		justify-content: center;
+    		font-size: 35px;
+    		color: #000;
+    	}
+        .fill-line{
+            opacity: 0;
+        }
+    	section,.first{
+    		height: 50vh;
+    		text-align: center;
+    	}
+    	section{
+    		padding: 230px 0 150px;
+    	}
+    	section img{
+    		visibility: 0;
+    		opacity: 0;
+    		transition: all 0.5s;
+    		transform: translateY(50px);
+    	}
+    	section img.fade{
+    		visibility: 1;
+    		opacity: 1;
+    		transform: translateY(0);
+    	}
+    	.content {
+            max-width: 490px;
+            margin: 0 auto;
+            text-align: center;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+         .content h1 {
+          font-size: 3em;
+          position: relative;
+        }
+         .content h1 span {
+          display: block;
+          position: relative;
+        }
+         
+        span:after {
+          content: ' ';
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          background: #fff;
+          z-index: 1;
+          transform-origin: 50% 0% 0;
+        }
+        .gsap_animation{
+            position: relative;
+        }
+        .container{
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        .block-wrapper{
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: flex;
+            -webkit-flex-wrap: wrap;
+            -moz-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+            -o-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin: 0 -25px;
+        }
+        .block-wrapper .block-down{
+            margin-top: 86px;
+        }
+        .block-wrapper .block-inner.block-up>svg{          
+            top: -55px;
+        }
+        .block-wrapper .block-inner.block-down>svg{
+            bottom: -55px;
+        }
+        .block-wrapper .block-inner>svg{
+            left: 75px;
+            height: 150px;
+            width: 270px;
+            z-index: -1;
+            position: absolute;
+        }
+        .block-wrapper .block-inner{
+            height: 170px;
+            background-color: #ccc;
+            border-radius: 10px;
+            position: relative;
+        }
+        .block-wrapper .block{
+            max-width: 20%;
+            flex: 0 0 20%;
+            padding: 0 25px;
+            box-sizing: border-box;
+        }
+        .fill-line{
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <section class="first">
+            scroll down the page
+        </section>
+    	<section class="gsap_animation">
+    		<div class="content">
+                <h1 class="anim1"><span>Welcome to</span><span> GreenSock Animation</span> <span>Tool Demo</span></h1>
+            </div>
+    	</section>
+    	<section class="arrow-box">
+    		<div class="container">
+               <div class="block-wrapper">
+                   <div class="block">
+                       <div class="block-inner block-up">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="308" height="152" viewBox="0 0 308 152"><defs><clipPath id="3cxaa"><path fill="#fff" d="M1 64.998s196.618-181.234 296.744 68.778"/></clipPath></defs>
+                                <g>
+                                    <g>
+                                        <g>
+                                            <path fill="none" stroke="#cdd1de" stroke-dasharray="8 4" stroke-miterlimit="20" stroke-width="4" d="M1 64.998s196.618-181.234 296.744 68.778" clip-path="url(&quot;#3cxaa&quot;)"/>
+                                            <path mask="url(#dashed-line1)" fill="none" stroke="#000" stroke-dasharray="8 4" stroke-miterlimit="20" stroke-width="4" d="M1 64.998s196.618-181.234 296.744 68.778" clip-path="url(&quot;#3cxaa&quot;)"/>
+                                            <mask id="dashed-line1">
+                                                <path class="fill-line" fill="none" stroke="#cdd1de" stroke-miterlimit="20" stroke-width="4" d="M1 64.998s196.618-181.234 296.744 68.778" clip-path="url(&quot;#3cxaa&quot;)"/>
+                                            </mask>                                            
+                                        </g>
+                                        <g>
+                                            <path fill="#cdd1de" d="M300.978 151.804l-15.703-16.897 22.41-5.173z"/>
+                                            <path class="fill-line" fill="#000" opacity="0" d="M300.978 151.804l-15.703-16.897 22.41-5.173z"/>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                       </div>
+                   </div>
+                   <div class="block">
+                       <div class="block-inner block-down">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="308" height="151" viewBox="0 0 308 151">
+                                <defs>
+                                    <clipPath id="93h3a">
+                                        <path fill="#fff" d="M1 86.649s196.818 180.894 297.046-68.65"/>
+                                    </clipPath>
+                                </defs>
+                                <g>
+                                    <g>
+                                        <g>
+                                            <path fill="none" stroke="#cdd1de" stroke-dasharray="8 4" stroke-miterlimit="20" stroke-width="4" d="M1 86.649s196.818 180.894 297.046-68.65" clip-path="url(&quot;#93h3a&quot;)"/>
+                                            <path mask="url(#dashed-line2)" fill="none" stroke="#000" stroke-dasharray="8 4" stroke-miterlimit="20" stroke-width="4" d="M1 86.649s196.818 180.894 297.046-68.65" clip-path="url(&quot;#93h3a&quot;)"/>
+                                            <mask id="dashed-line2" maskUnits="userSpaceOnUse">
+                                                <path class="fill-line" fill="none" stroke="#cdd1de" stroke-miterlimit="20" stroke-width="4" d="M1 86.649s196.818 180.894 297.046-68.65" clip-path="url(&quot;#93h3a&quot;)"/>
+                                            </mask>
+                                        </g>
+                                        <g>
+                                            <path fill="#cdd1de" d="M301.284.005l-15.72 16.866 22.433 5.164z"/>
+                                            <path class="fill-line" fill="#000" opacity="0" d="M301.284.005l-15.72 16.866 22.433 5.164z"/>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                       </div>
+                   </div>
+                   <div class="block">
+                       <div class="block-inner block-up">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="308" height="152" viewBox="0 0 308 152"><defs><clipPath id="3cxaa"><path fill="#fff" d="M1 64.998s196.618-181.234 296.744 68.778"/></clipPath></defs>
+                                <g>
+                                    <g>
+                                        <g>
+                                            <path fill="none" stroke="#cdd1de" stroke-dasharray="8 4" stroke-miterlimit="20" stroke-width="4" d="M1 64.998s196.618-181.234 296.744 68.778" clip-path="url(&quot;#3cxaa&quot;)"/>
+                                            <path mask="url(#dashed-line3)" fill="none" stroke="#000" stroke-dasharray="8 4" stroke-miterlimit="20" stroke-width="4" d="M1 64.998s196.618-181.234 296.744 68.778" clip-path="url(&quot;#3cxaa&quot;)"/>
+                                            <mask id="dashed-line3">
+                                                <path class="fill-line" fill="none" stroke="#cdd1de" stroke-miterlimit="20" stroke-width="4" d="M1 64.998s196.618-181.234 296.744 68.778" clip-path="url(&quot;#3cxaa&quot;)"/>
+                                            </mask>                                            
+                                        </g>
+                                        <g>
+                                            <path fill="#cdd1de" d="M300.978 151.804l-15.703-16.897 22.41-5.173z"/>
+                                            <path class="fill-line" fill="#000" opacity="0" d="M300.978 151.804l-15.703-16.897 22.41-5.173z"/>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                       </div>
+                   </div>
+                   <div class="block">
+                       <div class="block-inner block-down">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="308" height="151" viewBox="0 0 308 151">
+                                <defs>
+                                    <clipPath id="93h3a">
+                                        <path fill="#fff" d="M1 86.649s196.818 180.894 297.046-68.65"/>
+                                    </clipPath>
+                                </defs>
+                                <g>
+                                    <g>
+                                        <g>
+                                            <path fill="none" stroke="#cdd1de" stroke-dasharray="8 4" stroke-miterlimit="20" stroke-width="4" d="M1 86.649s196.818 180.894 297.046-68.65" clip-path="url(&quot;#93h3a&quot;)"/>
+                                            <path mask="url(#dashed-line4)" fill="none" stroke="#000" stroke-dasharray="8 4" stroke-miterlimit="20" stroke-width="4" d="M1 86.649s196.818 180.894 297.046-68.65" clip-path="url(&quot;#93h3a&quot;)"/>
+                                            <mask id="dashed-line4" maskUnits="userSpaceOnUse">
+                                                <path class="fill-line" fill="none" stroke="#cdd1de" stroke-miterlimit="20" stroke-width="4" d="M1 86.649s196.818 180.894 297.046-68.65" clip-path="url(&quot;#93h3a&quot;)"/>
+                                            </mask>
+                                        </g>
+                                        <g>
+                                            <path fill="#cdd1de" d="M301.284.005l-15.72 16.866 22.433 5.164z"/>
+                                            <path class="fill-line" fill="#000" opacity="0" d="M301.284.005l-15.72 16.866 22.433 5.164z"/>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                       </div>
+                   </div>
+                   <div class="block">
+                       <div class="block-inner block-up">
+                       </div>
+                   </div>
+               </div>       
+            </div>
+    	</section>
+    </div>
+
+    <!-- <script src="js/jquery.js"></script> -->
+    <script src="js/gsap.min.js"></script>
+    <script src="js/ScrollTrigger.min.js"></script>
+    <script src="js/CSSRulePlugin3.min.js"></script>
+    <script src="js/DrawSVGPlugin3.min.js"></script>
+    <script src="js/MotionPathPlugin.min.js"></script>
+    <script src="js/MotionPathHelper.min.js"></script>
+    
+</body>
+
+<script>
+    // $(function () {     
+
+        gsap.registerPlugin(CSSRulePlugin, ScrollTrigger); 
+  //       var rule = CSSRulePlugin.getRule("span:after");
+
+		// // create a scene       
+  //       var action = gsap.timeline({
+  //            // repeat: -1, 
+  //            // yoyo: true,
+  //            scrollTrigger: {
+  //             trigger: ".gsap_animation",
+  //             markers:true,
+  //             start: "top 0%", // when the top of the trigger hits the top of the viewport
+  //             end: "bottom 80%", // end after scrolling 500px beyond the start
+  //             //events: onEnter onLeave onEnterBack onLeaveBack
+  //             toggleActions:"restart complete restart none"
+  //            //options: play, pause, resume, reset, restart, complete, reverse,none
+  //             // scrub: 1, 
+  //           }
+  //          })
+  //           .from(".anim1", {opacity: 0,duration: 0.2})
+  //           .to(rule, {cssRule: {scaleY: 0},duration: 1.5});
+
+        // arrow-box-section
+        var action1 = gsap.timeline({
+            scrollTrigger: {
+              trigger: ".arrow-box",
+              markers:true,
+              start: "top 0%", // when the top of the trigger hits the top of the viewport
+              end: "bottom 80%", // end after scrolling 500px beyond the start
+              //events: onEnter onLeave onEnterBack onLeaveBack
+              toggleActions:"play complete restart play"
+             //options: play, pause, resume, reset, restart, complete, reverse,none
+              // scrub: 1, 
+            }
+        })
+            .fromTo(".block-wrapper .block-inner>svg .fill-line", {strokeDasharray: "0 0",strokeDashoffset: 0,opacity:0}, {strokeDasharray: "700px, 99999px",strokeDashoffset: 100 ,duration: 1.2,stagger:0.6,opacity:1});
+
+        // //aeroplane-animation
+        // gsap.registerPlugin(MotionPathPlugin);
+        // var height = $('.aeroplane-section').innerHeight();
+        // var aeroplane = gsap.to('.aeroplane', {
+        //     duration: 5, 
+        //     // repeat:-1,
+        //     // yoyo: false,
+        //     ease: "none",
+        //     motionPath:{
+        //       start:0,
+        //       path: '.aeroplane-path',
+        //       align: '.aeroplane-path',
+        //       autoRotate: true,
+        //       alignOrigin: [0.2, 0.2]
+        //     }
+        // })
+        // // MotionPathHelper.create('.aeroplane-d');
+        //  new ScrollMagic.Scene({
+        //     triggerElement:'.aeroplane-section',
+        //     offset: 200,
+        //     // duration:height,
+        //      // duration: "100%",
+        //     // reverse:true
+        // })
+        // .setTween(aeroplane)
+        // .addTo(controller)
+        // // .on('start', function (event) {
+        // //     aeroplane.play(0);
+        // // })
+        // // .on('leave', function (event) {
+        // //    aeroplane.pause(0);
+        // // })
+        // .addIndicators();
+</script>
+
+</html>
